@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIST.CO | Local Pride Fashion</title>
+  <!-- Fonts Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="navbar-container">
+    <!-- Navbar akan dirender oleh JavaScript -->
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="app-content" class="container" style="padding-top: 2rem;">
+
+    <!-- HOME -->
+    <section id="home-section" class="page-section active">
+      <div class="hero">
+        <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=1200"
+          alt="Mist-Co" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <span class="hero-badge">NEW COLLECTION 2024</span>
+          <h1>UNLEASH YOUR <br> <span class="text-gradient">URBAN STYLE</span></h1>
+          <p>Koleksi streetwear premium yang menggabungkan kenyamanan maksimal dengan desain minimalis.</p>
+          <div class="hero-btns">
+            <a href="#products" class="btn btn-lg">BELANJA SEKARANG</a>
+            <a href="#about" class="btn btn-outline-white btn-lg">TENTANG KAMI</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SERVICE HIGHLIGHTS -->
+      <div class="service-highlights">
+        <div class="service-item">
+          <div class="service-icon">🚚</div>
+          <div class="service-text">
+            <h4>Free Shipping</h4>
+            <p>On orders over Rp 500k</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🛡️</div>
+          <div class="service-text">
+            <h4>Secure Payment</h4>
+            <p>100% Secure SSL Payment</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🔄</div>
+          <div class="service-text">
+            <h4>Easy Returns</h4>
+            <p>7 Days return policy</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">⭐</div>
+          <div class="service-text">
+            <h4>Premium Quality</h4>
+            <p>Best materials selected</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products-section" class="page-section store-view">
+      <div class="page-header">
+        <h2>Our Collection</h2>
+        <p>Premium Streetwear Essentials</p>
+      </div>
+      <form id="search-form" class="filter-bar">
+        <div class="search-form">
+          <input type="text" id="search-input" class="form-control" placeholder="Cari barang...">
+          <button type="submit" class="btn">Cari</button>
+        </div>
+        <div class="category-chips-container">
+          <label>Filter Kategori:</label>
+          <div id="category-chips" class="category-chips">
+            <button type="button" class="chip active" data-value="all">Semua</button>
+            <button type="button" class="chip" data-value="hoodie">Hoodie</button>
+            <button type="button" class="chip" data-value="kaos">Kaos</button>
+            <button type="button" class="chip" data-value="celana">Celana</button>
+            <button type="button" class="chip" data-value="workshirt">Workshirt</button>
+            <button type="button" class="chip" data-value="pakaian-muslim">Pakaian Muslim</button>
+            <button type="button" class="chip" data-value="topi">Topi</button>
+          </div>
+        </div>
+      </form>
+      <div id="products-grid"></div>
+    </section>
+
+    <!-- CART -->
+    <section id="cart-section" class="page-section checkout-view">
+      <div class="page-header-minimal">
+        <h2 class="section-title">Shopping Bag</h2>
+      </div>
+      <div class="cart-layout">
+        <div id="cart-items" class="cart-items-container"></div>
+        <div class="summary-card">
+          <h3 class="summary-title">Ringkasan Belanja</h3>
+          <div class="summary-total-row">
+            <span>TOTAL</span>
+            <span id="cart-total">Rp 0</span>
+          </div>
+          <button id="btn-to-checkout" class="btn btn-checkout-wide" onclick="window.location.hash='#checkout'">Lanjut
+            ke Pembayaran</button>
+          <div class="secure-checkout-badge">
+            <span>🔒 Secure Checkout</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAVORIT -->
+    <section id="wishlist-section" class="page-section journal-view">
+      <div class="container">
+        <div class="page-header">
+          <h2>Your Favorites</h2>
+          <p>Handpicked style journey</p>
+        </div>
+        <div id="wishlist-grid" class="grid grid-cols-4 gap-4"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about-section" class="page-section brand-view">
+      <div class="container">
+        <h2 class="section-title">Tentang MIST.CO</h2>
+        <div class="about-hero">
+          <div class="about-hero-text">
+            <p class="lead-text">Pionir Streetwear Lokal dengan Kualitas Internasional.</p>
+            <p>MIST.CO lahir dari semangat untuk mengangkat potensi industri kreatif Indonesia, khususnya di bidang
+              fashion. Kami percaya bahwa produk lokal mampu bersaing di kancah global dengan inovasi dan kualitas tanpa
+              kompromi.</p>
+            <p>Setiap produk kami dirancang dengan ketelitian tinggi, menggabungkan estetika urban modern dengan
+              fungsionalitas harian untuk gaya hidup anak muda yang dinamis.</p>
+          </div>
+          <div class="about-hero-image">
+            <img
+              src="https://images.pexels.com/photos/3965548/pexels-photo-3965548.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="About Mist-Co">
+            <div class="image-accent-box">EST. 2024</div>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">💎</div>
+            <h4>Kualitas Premium</h4>
+            <p>Hanya menggunakan bahan terbaik untuk daya tahan dan kenyamanan maksimal.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🚀</div>
+            <h4>Desain Inovatif</h4>
+            <p>Selalu menghadirkan tren terbaru dengan sentuhan desain yang unik.</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🇮🇩</div>
+            <h4>Local Pride</h4>
+            <p>Bangga menjadi produk buatan Indonesia yang mampu bersaing secara global.</p>
+          </div>
+        </div>
+
+        <div class="team-section">
+          <h3 class="team-title">Tim Pengembang</h3>
+          <div class="team-grid">
+
+            <!-- Member 1 -->
+            <div class="team-card">
+              <div class="team-avatar">👨🏻‍💻</div>
+              <div class="team-info">
+                <span>Lead Developer</span>
+                <h4>Muhammad Dhani Favian</h4>
+                <p class="team-nim">24.11.5944</p>
+                <p class="team-task"><strong>Jobdesk:</strong> Menu Pencarian, Header &amp; Footer, Keranjang</p>
+                <div class="team-files">
+                  <span class="file-tag">✅ SearchBar.jsx</span>
+                  <span class="file-tag">✅ Navbar.jsx</span>
+                  <span class="file-tag">✅ Footer.jsx</span>
+                  <span class="file-tag">✅ Cart.jsx</span>
+                  <span class="file-tag">✅ CartItem.jsx</span>
+                  <span class="file-tag">✅ CartContext.jsx</span>
+                  <span class="file-tag">✅ cart-service.js</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="team-card">
+              <div class="team-avatar">🧑🏽‍💻</div>
+              <div class="team-info">
+                <span>UI/UX Designer</span>
+                <h4>Muhammad Irfan Amelianso</h4>
+                <p class="team-nim">24.11.5940</p>
+                <p class="team-task"><strong>Jobdesk:</strong> Kategori Pakaian Muslim, Profile, Login &amp; Register
+                </p>
+                <div class="team-files">
+                  <span class="file-tag">✅ Login.jsx</span>
+                  <span class="file-tag">✅ Register.jsx</span>
+                  <span class="file-tag">✅ Profile.jsx</span>
+                  <span class="file-tag">✅ AuthContext.jsx</span>
+                  <span class="file-tag">✅ auth-service.js</span>
+                  <span class="file-tag">✅ muslimClothingProducts.js</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="team-card">
+              <div class="team-avatar">👨🏼‍💻</div>
+              <div class="team-info">
+                <span>Frontend Developer</span>
+                <h4>Andika Cavllo B</h4>
+                <p class="team-nim">24.11.5950</p>
+                <p class="team-task"><strong>Jobdesk:</strong> Halaman Favorit, Riwayat Transaksi, Kategori Hoodie</p>
+                <div class="team-files">
+                  <span class="file-tag">✅ Favorites.jsx</span>
+                  <span class="file-tag">✅ Orders.jsx</span>
+                  <span class="file-tag">✅ WishlistContext.jsx</span>
+                  <span class="file-tag">✅ wishlist-service.js</span>
+                  <span class="file-tag">✅ Category.jsx (Hoodie)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="team-card">
+              <div class="team-avatar">👨🏾‍💻</div>
+              <div class="team-info">
+                <span>Backend Developer</span>
+                <h4>Muhammd Farrukh al ghifari</h4>
+                <p class="team-nim">24.11.5936</p>
+                <p class="team-task"><strong>Jobdesk:</strong> Kategori Celana, About Us, Kategori Topi</p>
+                <div class="team-files">
+                  <span class="file-tag">✅ About.jsx</span>
+                  <span class="file-tag">✅ ProductCard.jsx</span>
+                  <span class="file-tag">✅ Category.jsx (Celana &amp; Topi)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="team-card">
+              <div class="team-avatar">👨🏽‍💻</div>
+              <div class="team-info">
+                <span>Quality Assurance</span>
+                <h4>Ahmad Nur Malik</h4>
+                <p class="team-nim">24.11.5926</p>
+                <p class="team-task"><strong>Jobdesk:</strong> Kategori Kaos, Checkout, Halaman Workshirt</p>
+                <div class="team-files">
+                  <span class="file-tag">✅ Checkout.jsx</span>
+                  <span class="file-tag">✅ Invoice.jsx</span>
+                  <span class="file-tag">✅ Category.jsx (Kaos)</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Shared Files -->
+          <div class="team-shared"
+            style="margin-top:2rem; padding:1.5rem; border-radius:12px; background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.2);">
+            <h4 style="margin-bottom:1rem; font-size:1rem; color:#6366f1;">🤝 File Shared (Seluruh Tim)</h4>
+            <div class="team-files">
+              <span class="file-tag">✅ Home.jsx</span>
+              <span class="file-tag">✅ Products.jsx</span>
+              <span class="file-tag">✅ ProductGrid.jsx</span>
+              <span class="file-tag">✅ style.css</span>
+              <span class="file-tag">✅ App.css</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section id="checkout-section" class="page-section checkout-view">
+      <div class="container">
+        <div class="page-header">
+          <h2>Checkout</h2>
+          <p>Complete your order</p>
+        </div>
+
+        <div class="cart-layout">
+          <div class="checkout-form-container">
+            <div class="auth-card">
+              <form id="checkout-form">
+                <div class="form-group">
+                  <label>Nama Penerima</label>
+                  <input type="text" id="checkout-name" class="form-control" placeholder="Masukkan nama lengkap..." required>
+                </div>
+                <div class="form-group">
+                  <label>No. Handphone</label>
+                  <input type="tel" id="checkout-phone" class="form-control" placeholder="Contoh: 08123456789" required>
+                </div>
+                <div class="form-group">
+                  <label>Alamat Lengkap</label>
+                  <textarea id="checkout-address" class="form-control" rows="3" placeholder="Jalan, Nomor, RT/RW, Kelurahan..." required></textarea>
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                  <div class="form-group">
+                    <label>Provinsi</label>
+                    <input type="text" id="checkout-province" class="form-control" placeholder="Contoh: Jawa Tengah" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Kode Pos</label>
+                    <input type="text" id="checkout-postal" class="form-control" placeholder="Contoh: 50271">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Catatan (Opsional)</label>
+                  <input type="text" id="checkout-notes" class="form-control" placeholder="Catatan untuk kurir...">
+                </div>
+                <div class="form-group">
+                  <label>Metode Pembayaran</label>
+                  <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
+                    <label style="display:flex;align-items:center;gap:0.75rem;cursor:pointer;padding:0.75rem 1rem;border:1px solid rgba(0,0,0,0.1);border-radius:8px;">
+                      <input type="radio" name="payment" value="COD" checked> <span>💵 Bayar di Tempat (COD)</span>
+                    </label>
+                    <label style="display:flex;align-items:center;gap:0.75rem;cursor:pointer;padding:0.75rem 1rem;border:1px solid rgba(0,0,0,0.1);border-radius:8px;">
+                      <input type="radio" name="payment" value="Transfer Bank"> <span>🏦 Transfer Bank</span>
+                    </label>
+                    <label style="display:flex;align-items:center;gap:0.75rem;cursor:pointer;padding:0.75rem 1rem;border:1px solid rgba(0,0,0,0.1);border-radius:8px;">
+                      <input type="radio" name="payment" value="E-Wallet"> <span>📱 E-Wallet (GoPay/OVO/Dana)</span>
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="summary-card">
+            <h3 class="summary-title">Ringkasan Pesanan</h3>
+            <div id="checkout-items-preview" class="checkout-items-preview">
+              <!-- Items will be injected here if needed -->
+            </div>
+            <div class="summary-row" style="display:flex;justify-content:space-between;margin-bottom:0.5rem;font-size:0.9rem;">
+              <span>Subtotal</span><span id="checkout-subtotal">Rp 0</span>
+            </div>
+            <div class="summary-row" style="display:flex;justify-content:space-between;margin-bottom:0.5rem;font-size:0.9rem;">
+              <span>Ongkir</span><span>Rp 15.000</span>
+            </div>
+            <div class="summary-row" style="display:flex;justify-content:space-between;margin-bottom:1rem;font-size:0.9rem;">
+              <span>Pajak (1%)</span><span id="checkout-tax">Rp 0</span>
+            </div>
+            <div class="summary-total-row">
+              <span>TOTAL PEMBAYARAN</span>
+              <span id="checkout-total-display">Rp 0</span>
+            </div>
+            <button type="button" id="btn-process-checkout" class="btn"
+              style="width: 100%; margin-top: 2rem; padding: 1.2rem;">PROSES PESANAN</button>
+            <p style="text-align: center; margin-top: 1.5rem; font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em;">
+              🔒 Secure SSL Encryption</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- PROFILE -->
+    <section id="profile-section" class="page-section">
+      <div class="container">
+        <h2 class="section-title">Profil Saya</h2>
+        <div class="profile-card-wrapper">
+          <div class="profile-hero-card">
+            <div class="profile-hero-banner"></div>
+            <div class="profile-hero-body">
+              <div class="profile-avatar-wrap">
+                <div class="avatar-circle" id="profile-avatar-char">U</div>
+              </div>
+              <h2 id="profile-name">User</h2>
+              <p id="profile-email">email@example.com</p>
+              <span class="member-badge">Diamond Member</span>
+            </div>
+          </div>
+          <div id="profile-info-content"></div>
+          <div class="profile-actions">
+            <a href="#history" class="btn btn-outline">📜 Lihat Riwayat Pesanan</a>
+            <button id="btn-profile-logout" class="btn btn-logout-new">Keluar Akun</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIWAYAT PESANAN -->
+    <section id="history-section" class="page-section journal-view">
+      <div class="container">
+        <div class="page-header">
+          <h2>Order History</h2>
+          <p>Track your past purchases</p>
+        </div>
+        <div class="history-back-bar">
+          <a href="#profile" class="btn-back-link">← Back to Profile</a>
+        </div>
+        <div id="transaction-list" class="transaction-list-new"></div>
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="login-section" class="page-section" style="max-width: 450px; margin: 2rem auto;">
+      <h2 class="section-title" id="auth-title">Masuk Akun</h2>
+      <div class="auth-card">
+        <form id="login-form">
+          <div class="form-group" id="register-name-group" style="display: none;"><label>Nama</label><input type="text"
+              id="login-name" class="form-control"></div>
+          <div class="form-group"><label>Email</label><input type="email" id="login-email" class="form-control"
+              required></div>
+          <div class="form-group"><label>Password</label><input type="password" id="login-password" class="form-control"
+              required></div>
+          <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;" id="auth-submit-btn">Sign In</button>
+        </form>
+        <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem;">
+          <span id="auth-toggle-text">Belum punya akun?</span> <a href="#" id="auth-toggle-btn">Daftar sekarang</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <h2 class="footer-logo">MIST.CO</h2>
+          <p class="footer-desc">Pionir streetwear lokal yang menghadirkan kualitas premium dan desain inovatif untuk
+            gaya hidup urban modern.</p>
+          <div class="social-links">
+            <a href="#" class="social-icon">IG</a>
+            <a href="#" class="social-icon">TW</a>
+            <a href="#" class="social-icon">FB</a>
+            <a href="#" class="social-icon">YT</a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Belanja</h4>
+          <ul>
+            <li><a href="#products">Semua Produk</a></li>
+            <li><a href="#products">Koleksi Terbaru</a></li>
+            <li><a href="#products">Terpopuler</a></li>
+            <li><a href="#products">Promo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Bantuan</h4>
+          <ul>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#">Cara Pembelian</a></li>
+            <li><a href="#">Pengiriman</a></li>
+            <li><a href="#">Kontak Kami</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter-col">
+          <h4>Newsletter</h4>
+          <p>Dapatkan info koleksi terbaru dan promo eksklusif.</p>
+          <form class="footer-subscribe">
+            <input type="email" placeholder="Email Anda" class="form-control">
+            <button type="button" class="btn btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom-new">
+        <p>&copy; 2024 MIST.CO - Built by Team Pengembang. All Rights Reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+
+  <div id="invoice-modal" class="modal">
+    <div class="modal-content invoice-paper"><span class="close-modal">&times;</span>
+      <div id="invoice-details"></div>
+    </div>
+  </div>
+  <div id="team-modal" class="modal">
+    <div class="modal-content team-profile-paper"><span class="close-team-modal close-modal">&times;</span>
+      <div id="team-profile-details"></div>
+    </div>
+  </div>
+</body>
+
+</html>
