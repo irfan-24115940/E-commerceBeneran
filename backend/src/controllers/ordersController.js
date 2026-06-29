@@ -8,7 +8,7 @@ async function list(req, res, next) {
 
     const orders = await db.query(
       `SELECT
-        o.id, o.status, o.created_at as createdAt,
+        o.id, o.status, o.created_at AS "createdAt",
         o.full_name, o.email, o.phone, o.address, o.province, o.postal_code,
         o.payment_method, o.total, o.shipping, o.tax, o.grand_total
       FROM orders o
@@ -101,7 +101,7 @@ async function create(req, res, next) {
         full_name, email, phone, address, province, postal_code, notes,
         payment_method, total, shipping, tax, grand_total
       ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
-      RETURNING id, status, created_at as "createdAt"`,
+      RETURNING id, status, created_at AS "createdAt"`,
       [
         userId,
         'Processing',

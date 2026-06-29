@@ -153,12 +153,19 @@ async function renderProductsPage() {
   grid.innerHTML = '<div class="grid grid-cols-4 gap-4">' + renderProductSkeleton(8) + '</div>';
 
   const allProducts = await loadProducts();
+  console.log('DEBUG FILTER:', {
+    currentCategory,
+    searchInput,
+    allProductsCount: allProducts.length,
+    sampleCategories: allProducts.map(p => p.category)
+  });
 
   // Filter kategori dan pencarian
   let filtered = allProducts;
   if (currentCategory !== 'all') {
     filtered = filtered.filter(p => (p.category || '').toLowerCase() === currentCategory.toLowerCase());
   }
+  console.log('DEBUG FILTERED:', { filteredCount: filtered.length });
   if (searchInput) {
     filtered = filtered.filter(p =>
       (p.title || p.name || '').toLowerCase().includes(searchInput) ||
@@ -318,15 +325,16 @@ async function renderCart() {
   let html = '';
   let total = 0;
   cart.forEach(item => {
+    const itemName = item.title || item.name || 'Produk';
     total += (item.price * item.quantity);
     html += `
       <div class="cart-item-new">
         <div class="cart-item-image-wrap">
-          <img src="${item.image}" alt="${item.name}">
+          <img src="${item.image}" alt="${itemName}">
         </div>
         <div class="cart-item-details">
           <div class="cart-item-header">
-            <h4>${item.name}</h4>
+            <h4>${itemName}</h4>
             <button class="remove-cart-new" data-id="${item.id}">✕</button>
           </div>
           <div class="cart-item-footer">
@@ -553,8 +561,9 @@ async function renderHistory() {
       const itemsText = Array.isArray(t.items)
         ? t.items.map(i => `${i.title} x${i.quantity}`).join(', ')
         : (t.items || '-');
-      const dateText = t.createdAt
-        ? new Date(t.createdAt).toLocaleString('id-ID', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })
+      const rawDate = t.createdAt || t.createdat;
+      const dateText = rawDate
+        ? new Date(rawDate).toLocaleString('id-ID', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })
         : '-';
       const priceText = formatRupiah(t.grandTotal || t.total || 0);
       const orderId = `#INV-${String(t.id).padStart(6, '0')}`;

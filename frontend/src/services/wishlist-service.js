@@ -65,7 +65,7 @@ export const addToWishlist = async (product) => {
     const response = await fetch(`${API_BASE_URL}/wishlist/items`, {
       method: 'POST',
       headers: getAuthHeaders(),
-      body: JSON.stringify({ productId: product.id })
+      body: JSON.stringify({ productId: product.id, title: product.title || product.name })
     });
 
     const data = await response.json();

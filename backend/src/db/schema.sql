@@ -104,6 +104,7 @@ CREATE TABLE IF NOT EXISTS wishlist_items (
         REFERENCES wishlist(id) ON DELETE CASCADE,
     product_id BIGINT NOT NULL
         REFERENCES products(id) ON DELETE RESTRICT,
+    title TEXT,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     UNIQUE (wishlist_id, product_id)
